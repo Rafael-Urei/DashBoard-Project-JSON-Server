@@ -25,7 +25,7 @@ export default function NavBar({ children }: Props) {
         >
           <Box
             bgcolor="primary.main"
-            height={theme.spacing(5)}
+            height={theme.spacing(6)}
             display="flex"
             alignItems="center"
             paddingLeft={theme.spacing(2)}
@@ -33,15 +33,15 @@ export default function NavBar({ children }: Props) {
             <Box marginRight={theme.spacing(2)}>
               <Avatar
                 src="#"
-                alt="Profile"
-                sx={{ width: theme.spacing(3), height: theme.spacing(3) }}
+                alt="Tristitia-Profile"
+                sx={{ width: theme.spacing(4), height: theme.spacing(4) }}
               ></Avatar>
             </Box>
           </Box>
 
-          <Divider color="primary.dark" />
+          <Divider color={theme.palette.primary.main} />
 
-          <Box flex={1} bgcolor="primary.dark">
+          <Box flex={1} bgcolor={theme.palette.primary.dark}>
             <List
               component="nav"
               sx={{
@@ -110,11 +110,11 @@ export default function NavBar({ children }: Props) {
               </ListItemButton>
             </List>
           </Box>
-          <Divider color="primary.dark" />
+          <Divider color={theme.palette.primary.main} />
           <Box
             sx={{
-              height: theme.spacing(4),
-              bgcolor: "primary.main",
+              height: theme.spacing(6),
+              bgcolor: theme.palette.primary.main,
             }}
           ></Box>
         </Box>
