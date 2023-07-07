@@ -1,6 +1,5 @@
 import { ThemeProvider } from "@emotion/react";
 import {
-  ReactNode,
   createContext,
   useCallback,
   useContext,
@@ -9,14 +8,11 @@ import {
 } from "react";
 import { darkTheme, mainTheme } from "../themes";
 import { Box } from "@mui/material";
+import { Props } from "../types";
 
 interface IThemeContextData {
   themeName: "light" | "dark";
   toggleTheme: () => void;
-}
-
-interface Props {
-  children?: ReactNode;
 }
 
 const ThemeContext = createContext({} as IThemeContextData);
