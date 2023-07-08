@@ -7,6 +7,7 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
+  Typography,
   useTheme,
 } from "@mui/material";
 import { Props } from "../../types";
@@ -30,12 +31,28 @@ export default function NavBar({ children }: Props) {
             alignItems="center"
             paddingLeft={theme.spacing(2)}
           >
-            <Box marginRight={theme.spacing(2)}>
+            <Box
+              marginRight={theme.spacing(2)}
+              display="flex"
+              alignItems="center"
+            >
               <Avatar
                 src="#"
                 alt="Tristitia-Profile"
-                sx={{ width: theme.spacing(4), height: theme.spacing(4) }}
+                sx={{
+                  width: theme.spacing(4),
+                  height: theme.spacing(4),
+                  marginLeft: theme.spacing(2),
+                }}
               ></Avatar>
+              <Typography
+                sx={{
+                  marginLeft: theme.spacing(2),
+                  color: theme.palette.primary.contrastText,
+                }}
+              >
+                Tristitia Lab.
+              </Typography>
             </Box>
           </Box>
 
@@ -51,6 +68,7 @@ export default function NavBar({ children }: Props) {
               <ListItemButton
                 sx={{
                   height: theme.spacing(6),
+                  paddingLeft: theme.spacing(4),
                 }}
               >
                 <ListItemIcon>
@@ -66,6 +84,7 @@ export default function NavBar({ children }: Props) {
               <ListItemButton
                 sx={{
                   height: theme.spacing(6),
+                  paddingLeft: theme.spacing(4),
                 }}
               >
                 <ListItemIcon>
@@ -81,6 +100,7 @@ export default function NavBar({ children }: Props) {
               <ListItemButton
                 sx={{
                   height: theme.spacing(6),
+                  paddingLeft: theme.spacing(4),
                 }}
               >
                 <ListItemIcon>
@@ -96,6 +116,7 @@ export default function NavBar({ children }: Props) {
               <ListItemButton
                 sx={{
                   height: theme.spacing(6),
+                  paddingLeft: theme.spacing(4),
                 }}
               >
                 <ListItemIcon>
@@ -116,7 +137,18 @@ export default function NavBar({ children }: Props) {
               height: theme.spacing(6),
               bgcolor: theme.palette.primary.main,
             }}
-          ></Box>
+            display="flex"
+            alignItems="center"
+            justifyContent="center"
+          >
+            <Typography
+              sx={{
+                color: theme.palette.primary.contrastText,
+              }}
+            >
+              Created by Urei.
+            </Typography>
+          </Box>
         </Box>
       </Drawer>
       <Box height="100vh" marginLeft={theme.spacing(38)}>
