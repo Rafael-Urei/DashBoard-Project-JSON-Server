@@ -4,17 +4,30 @@ import {
   Divider,
   Drawer,
   List,
-  ListItemButton,
-  ListItemIcon,
-  ListItemText,
+  ToggleButton,
+  ToggleButtonGroup,
   Typography,
   useTheme,
 } from "@mui/material";
 import { Props } from "../../types";
-import { BarChart, FileSearch, HomeIcon, UserPlus2 } from "lucide-react";
+import {
+  BarChart,
+  FileSearch,
+  HomeIcon,
+  ToggleLeft,
+  UserPlus2,
+} from "lucide-react";
+import { useState } from "react";
 
 export default function NavBar({ children }: Props) {
   const theme = useTheme();
+  const [alignment, setAlignment] = useState("home");
+  const handleChange = (
+    e: React.MouseEvent<HTMLElement>,
+    newAlignment: string
+  ) => {
+    setAlignment(newAlignment);
+  };
   return (
     <>
       <Drawer variant="permanent">
@@ -49,6 +62,7 @@ export default function NavBar({ children }: Props) {
                 sx={{
                   marginLeft: theme.spacing(2),
                   color: theme.palette.primary.contrastText,
+                  fontSize: "12px",
                 }}
               >
                 Tristitia Lab.
@@ -65,73 +79,81 @@ export default function NavBar({ children }: Props) {
                 paddingTop: theme.spacing(10),
               }}
             >
-              <ListItemButton
-                sx={{
-                  height: theme.spacing(6),
-                  paddingLeft: theme.spacing(4),
-                }}
+              <ToggleButtonGroup
+                orientation="vertical"
+                color="secondary"
+                value={alignment}
+                exclusive
+                onChange={handleChange}
+                sx={{ width: "100%" }}
+                aria-label="Platform"
               >
-                <ListItemIcon>
-                  <HomeIcon
-                    style={{ color: "25D997", height: "20px", width: "20px" }}
-                  />
-                </ListItemIcon>
-                <ListItemText
-                  primary="Home - Summary"
-                  style={{ color: "#fff" }}
-                ></ListItemText>
-              </ListItemButton>
-              <ListItemButton
-                sx={{
-                  height: theme.spacing(6),
-                  paddingLeft: theme.spacing(4),
-                }}
-              >
-                <ListItemIcon>
-                  <BarChart
-                    style={{ color: "25D997", height: "20px", width: "20px" }}
-                  />
-                </ListItemIcon>
-                <ListItemText
-                  primary="Charts"
-                  style={{ color: "#fff" }}
-                ></ListItemText>
-              </ListItemButton>
-              <ListItemButton
-                sx={{
-                  height: theme.spacing(6),
-                  paddingLeft: theme.spacing(4),
-                }}
-              >
-                <ListItemIcon>
-                  <FileSearch
-                    style={{ color: "25D997", height: "20px", width: "20px" }}
-                  />
-                </ListItemIcon>
-                <ListItemText
-                  primary="Medical Reports"
-                  style={{ color: "#fff" }}
-                ></ListItemText>
-              </ListItemButton>
-              <ListItemButton
-                sx={{
-                  height: theme.spacing(6),
-                  paddingLeft: theme.spacing(4),
-                }}
-              >
-                <ListItemIcon>
-                  <UserPlus2
-                    style={{ color: "25D997", height: "20px", width: "20px" }}
-                  />
-                </ListItemIcon>
-                <ListItemText
-                  primary="Register"
-                  style={{ color: "#fff" }}
-                ></ListItemText>
-              </ListItemButton>
+                <ToggleButton
+                  value="home"
+                  sx={{
+                    fontSize: "12px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "flex-start",
+                    paddingLeft: theme.spacing(8),
+                    gap: theme.spacing(2),
+                    color: "#B6C3EE",
+                  }}
+                >
+                  <HomeIcon color="#25d997"></HomeIcon>
+                  Home - Summary
+                </ToggleButton>
+                <ToggleButton
+                  value="chart"
+                  sx={{
+                    fontSize: "12px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "flex-start",
+                    paddingLeft: theme.spacing(8),
+                    gap: theme.spacing(2),
+                    color: "#B6C3EE",
+                  }}
+                >
+                  <BarChart color="#25d997"></BarChart>
+                  Charts
+                </ToggleButton>
+                <ToggleButton
+                  value="mreport"
+                  sx={{
+                    fontSize: "12px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "flex-start",
+                    paddingLeft: theme.spacing(8),
+                    gap: theme.spacing(2),
+                    color: "#B6C3EE",
+                  }}
+                >
+                  <FileSearch color="#25d997"></FileSearch>
+                  Medical Report
+                </ToggleButton>
+                <ToggleButton
+                  value="register"
+                  sx={{
+                    fontSize: "12px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "flex-start",
+                    paddingLeft: theme.spacing(8),
+                    gap: theme.spacing(2),
+                    color: "#B6C3EE",
+                  }}
+                >
+                  <UserPlus2 color="#25d997"></UserPlus2>
+                  Register
+                </ToggleButton>
+              </ToggleButtonGroup>
             </List>
           </Box>
+
           <Divider color={theme.palette.primary.main} />
+
           <Box
             sx={{
               height: theme.spacing(6),
@@ -144,6 +166,7 @@ export default function NavBar({ children }: Props) {
             <Typography
               sx={{
                 color: theme.palette.primary.contrastText,
+                fontSize: "12px",
               }}
             >
               Created by Urei.
