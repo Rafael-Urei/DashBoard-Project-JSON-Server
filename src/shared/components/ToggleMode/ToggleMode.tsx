@@ -11,8 +11,8 @@ export const ToggleComponent = () => {
       <Box
         display="flex"
         alignSelf="center"
-        justifyContent="flex-end"
         marginRight={theme.spacing(2)}
+        sx={{ position: "fixed", right: 0 }}
       >
         <IconButton onClick={toggleTheme}>
           {themeName === "light" ? (

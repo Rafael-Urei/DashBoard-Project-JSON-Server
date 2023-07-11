@@ -7,20 +7,18 @@ import {
   ToggleButton,
   ToggleButtonGroup,
   Typography,
+  useMediaQuery,
   useTheme,
 } from "@mui/material";
 import { Props } from "../../types";
-import {
-  BarChart,
-  FileSearch,
-  HomeIcon,
-  ToggleLeft,
-  UserPlus2,
-} from "lucide-react";
+import { BarChart, FileSearch, HomeIcon, UserPlus2 } from "lucide-react";
 import { useState } from "react";
+import { useAppDrawerContext } from "../../contexts";
 
 export default function NavBar({ children }: Props) {
   const theme = useTheme();
+  const { isOpen, toggleDrawer } = useAppDrawerContext();
+  const match = useMediaQuery(theme.breakpoints.down("sm"));
   const [alignment, setAlignment] = useState("home");
   const handleChange = (
     e: React.MouseEvent<HTMLElement>,
@@ -30,7 +28,11 @@ export default function NavBar({ children }: Props) {
   };
   return (
     <>
-      <Drawer variant="permanent">
+      <Drawer
+        open={isOpen}
+        variant={match ? "temporary" : "permanent"}
+        onClose={toggleDrawer}
+      >
         <Box
           width={theme.spacing(38)}
           display="flex"
@@ -48,6 +50,7 @@ export default function NavBar({ children }: Props) {
               marginRight={theme.spacing(2)}
               display="flex"
               alignItems="center"
+              width="100%"
             >
               <Avatar
                 src="#"
@@ -174,7 +177,7 @@ export default function NavBar({ children }: Props) {
           </Box>
         </Box>
       </Drawer>
-      <Box height="100vh" marginLeft={theme.spacing(38)}>
+      <Box height="100vh" marginLeft={match ? 0 : theme.spacing(38)}>
         {children}
       </Box>
     </>
