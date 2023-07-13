@@ -27,7 +27,9 @@ const ListWithRoutes = ({ to, label, onClick, icon }: LinkRouteProps) => {
   return (
     <ListItemButton selected={!!match} onClick={handleNavigate}>
       <ListItemIcon>
-        <Icon>{icon}</Icon>
+        <Icon sx={{ color: "#25d997", textAlign: "center", width: "100%" }}>
+          {icon}
+        </Icon>
       </ListItemIcon>
       <ListItemText primary={label} />
     </ListItemButton>

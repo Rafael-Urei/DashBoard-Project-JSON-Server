@@ -1,12 +1,12 @@
 import { Box } from "@mui/material";
-import { BasicLayout } from "../../shared/layouts";
+import { BaseLayout } from "../../shared/layouts";
 
 export const Home = () => {
   return (
     <>
-      <BasicLayout titulo="Home Page">
+      <BaseLayout titulo="Summary">
         <Box>Home</Box>
-      </BasicLayout>
+      </BaseLayout>
     </>
   );
 };
