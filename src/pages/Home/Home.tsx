@@ -1,4 +1,4 @@
-import { Box, useMediaQuery, useTheme } from "@mui/material";
+import { Box, Button, useMediaQuery, useTheme } from "@mui/material";
 import { ToggleDrawerComponent } from "../../shared/components/ToggleDrawer/ToggleDrawer";
 
 export default function Home() {
@@ -7,6 +7,7 @@ export default function Home() {
   return (
     <>
       <Box>{match && <ToggleDrawerComponent />}</Box>
+      <Button variant="contained">Olá</Button>
     </>
   );
 }

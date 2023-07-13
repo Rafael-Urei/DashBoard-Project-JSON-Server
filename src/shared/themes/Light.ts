@@ -3,18 +3,20 @@ import { createTheme } from "@mui/material";
 export const mainTheme = createTheme({
   palette: {
     primary: {
-      main: "#142052",
-      dark: "#0F173B",
-      light: "#ffffff",
-      contrastText: "#ffffff",
+      light: "#c5cbf4",
+      main: "#2351d9",
+      dark: "#001ea4",
+      contrastText: "#fff",
     },
     secondary: {
-      main: "#fff",
-      dark: "#303134",
+      light: "#ddd332",
+      main: "#d9ab23",
+      dark: "#d06f05",
+      contrastText: "#000",
     },
     background: {
-      paper: "#ffffff",
-      default: "#DBDBDB",
+      default: "#f5f5f5",
+      paper: "#fafafa",
     },
   },
 });
