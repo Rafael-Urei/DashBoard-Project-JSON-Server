@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import { Home } from "../pages";
+import { Charts, Home, Register, Reports } from "../pages";
 import { useEffect } from "react";
 import { useAppDrawerContext } from "../shared/contexts";
 import { BarChart, FileSearch, HomeIcon, UserPlus2 } from "lucide-react";
@@ -35,6 +35,9 @@ export const AppRoutes = () => {
     <>
       <Routes>
         <Route path="/home" element={<Home />} />
+        <Route path="/charts" element={<Charts />} />
+        <Route path="/reports" element={<Reports />} />
+        <Route path="/register" element={<Register />} />
         <Route path="*" element={<Navigate to="/home" />} />
       </Routes>
     </>

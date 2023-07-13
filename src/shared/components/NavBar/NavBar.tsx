@@ -88,7 +88,7 @@ export default function NavBar({ children }: Props) {
           <Divider />
 
           <Box flex={1}>
-            <List component="nav">
+            <List component="nav" sx={{ paddingTop: 8 }}>
               {drawerOptions.map((drawerOption) => (
                 <ListWithRoutes
                   key={drawerOption.path}
