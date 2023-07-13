@@ -1,7 +1,6 @@
 import { Box, IconButton, useTheme } from "@mui/material";
-import { Menu, X } from "lucide-react";
 import { useAppDrawerContext } from "../../contexts";
-import { MenuBook } from "@mui/icons-material";
+import MenuIcon from "@mui/icons-material/Menu";
 
 export const ToggleDrawerComponent = () => {
   const theme = useTheme();
@@ -10,7 +9,7 @@ export const ToggleDrawerComponent = () => {
     <Box onClick={toggleDrawer} display="flex">
       <IconButton>
         {!isOpen ? (
-          <MenuBook sx={{ color: theme.palette.secondary.dark }} />
+          <MenuIcon sx={{ color: theme.palette.secondary.dark }} />
         ) : null}
       </IconButton>
     </Box>
