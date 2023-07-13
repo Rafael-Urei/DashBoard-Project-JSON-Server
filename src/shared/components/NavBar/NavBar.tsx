@@ -13,11 +13,10 @@ import {
   useTheme,
 } from "@mui/material";
 import { LinkRouteProps, Props } from "../../types";
-import { BarChart, FileSearch, HomeIcon, UserPlus2 } from "lucide-react";
 import { useAppDrawerContext } from "../../contexts";
 import { useMatch, useNavigate, useResolvedPath } from "react-router-dom";
 
-const ListWithRoutes = ({ to, label, onClick }: LinkRouteProps) => {
+const ListWithRoutes = ({ to, label, onClick, icon }: LinkRouteProps) => {
   const navigate = useNavigate();
   const resolvedPath = useResolvedPath(to);
   const match = useMatch({ path: resolvedPath.pathname, end: false });
@@ -28,9 +27,7 @@ const ListWithRoutes = ({ to, label, onClick }: LinkRouteProps) => {
   return (
     <ListItemButton selected={!!match} onClick={handleNavigate}>
       <ListItemIcon>
-        <Icon>
-          <HomeIcon />
-        </Icon>
+        <Icon>{icon}</Icon>
       </ListItemIcon>
       <ListItemText primary={label} />
     </ListItemButton>
@@ -95,6 +92,7 @@ export default function NavBar({ children }: Props) {
                   key={drawerOption.path}
                   label={drawerOption.label}
                   to={drawerOption.path}
+                  icon={drawerOption.icon}
                   onClick={match ? toggleDrawer : undefined}
                 />
               ))}

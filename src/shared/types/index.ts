@@ -8,4 +8,5 @@ export type LinkRouteProps = {
   to: string;
   onClick: (() => void) | undefined;
   label: string;
+  icon: ReactNode;
 };

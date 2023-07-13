@@ -1,13 +1,12 @@
-import { Box, Button, useMediaQuery, useTheme } from "@mui/material";
-import { ToggleDrawerComponent } from "../../shared/components/ToggleDrawer/ToggleDrawer";
+import { Box } from "@mui/material";
+import { BasicLayout } from "../../shared/layouts";
 
-export default function Home() {
-  const theme = useTheme();
-  const match = useMediaQuery(theme.breakpoints.down("sm"));
+export const Home = () => {
   return (
     <>
-      <Box>{match && <ToggleDrawerComponent />}</Box>
-      <Button variant="contained">Olá</Button>
+      <BasicLayout titulo="Home Page">
+        <Box>Home</Box>
+      </BasicLayout>
     </>
   );
-}
+};

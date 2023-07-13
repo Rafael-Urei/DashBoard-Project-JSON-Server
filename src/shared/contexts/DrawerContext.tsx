@@ -11,6 +11,7 @@ interface IDrawerContextData {
 interface IDrawerOptions {
   label: string;
   path: string;
+  icon: React.ReactNode;
 }
 
 const DrawerContext = createContext({} as IDrawerContextData);
