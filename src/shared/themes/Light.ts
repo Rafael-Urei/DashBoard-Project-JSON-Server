@@ -22,7 +22,7 @@ export const mainTheme = createTheme({
   },
   typography: {
     allVariants: {
-      color: "#2b2b2b",
+      color: "#0C1B3D",
     },
   },
 });

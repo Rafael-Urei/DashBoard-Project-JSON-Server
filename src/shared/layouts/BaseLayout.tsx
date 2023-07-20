@@ -39,7 +39,11 @@ export const BaseLayout = ({
           alignItems="center"
           padding={2}
         >
-          <Typography variant={!match ? "h2" : "h5"} component="h1">
+          <Typography
+            variant={!match ? "h2" : "h5"}
+            fontWeight={600}
+            component="h1"
+          >
             {title}
           </Typography>
         </Box>
