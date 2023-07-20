@@ -4,12 +4,17 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { useAppDateContext } from "../../contexts/DateContext";
-import dayjs from "dayjs";
+import { Dayjs } from "dayjs";
 
 export const DateSelector = () => {
   const [showCalendar, setShowCalendar] = useState(false);
-  const { date, getSelectedDate } = useAppDateContext();
+  const { date, setDate } = useAppDateContext();
   const theme = useTheme();
+
+  const handleChangeDate = (value: Dayjs | null) => {
+    setDate(value);
+  };
+
   return (
     <>
       <Box
@@ -35,8 +40,9 @@ export const DateSelector = () => {
           </Box>
           {showCalendar && (
             <DatePicker
+              format="DD/MM/YYYY"
               value={date}
-              onChange={(newValue) => getSelectedDate(dayjs(newValue))}
+              onChange={(newValue) => handleChangeDate(newValue)}
             ></DatePicker>
           )}
         </LocalizationProvider>
