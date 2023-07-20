@@ -1,5 +1,6 @@
 import {
   Avatar,
+  Badge,
   Box,
   Divider,
   Drawer,
@@ -27,9 +28,11 @@ const ListWithRoutes = ({ to, label, onClick, icon }: LinkRouteProps) => {
   return (
     <ListItemButton selected={!!match} onClick={handleNavigate}>
       <ListItemIcon>
-        <Icon sx={{ color: "#25d997", textAlign: "center", width: "100%" }}>
-          {icon}
-        </Icon>
+        <Badge variant="dot" color="secondary">
+          <Icon sx={{ color: "#25d997", textAlign: "center", width: "100%" }}>
+            {icon}
+          </Icon>
+        </Badge>
       </ListItemIcon>
       <ListItemText primary={label} />
     </ListItemButton>

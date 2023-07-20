@@ -1,7 +1,8 @@
-import { createTheme } from "@mui/material";
+import { colors, createTheme } from "@mui/material";
 
 export const mainTheme = createTheme({
   palette: {
+    mode: "light",
     primary: {
       light: "#c5cbf4",
       main: "#2351d9",
@@ -17,6 +18,11 @@ export const mainTheme = createTheme({
     background: {
       default: "#f5f5f5",
       paper: "#fafafa",
+    },
+  },
+  typography: {
+    allVariants: {
+      color: "#2b2b2b",
     },
   },
 });

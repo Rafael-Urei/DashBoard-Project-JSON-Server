@@ -6,15 +6,20 @@ import {
   useTheme,
 } from "@mui/material";
 import { ReactNode } from "react";
-import { useAppDrawerContext } from "../../shared/contexts";
+import { useAppDrawerContext } from "../contexts";
 import { MenuIcon } from "lucide-react";
 
 interface IBasicLayoutProps {
   children: ReactNode;
-  titulo: string;
+  title: string;
+  dateSelector: ReactNode;
 }
 
-export const BaseLayout = ({ children, titulo }: IBasicLayoutProps) => {
+export const BaseLayout = ({
+  children,
+  title,
+  dateSelector,
+}: IBasicLayoutProps) => {
   const { toggleDrawer } = useAppDrawerContext();
   const theme = useTheme();
   const match = useMediaQuery(theme.breakpoints.down("sm"));
@@ -35,10 +40,11 @@ export const BaseLayout = ({ children, titulo }: IBasicLayoutProps) => {
           padding={2}
         >
           <Typography variant={!match ? "h2" : "h5"} component="h1">
-            {titulo}
+            {title}
           </Typography>
         </Box>
-        <Box>{children}</Box>
+        {children}
+        {dateSelector}
       </Box>
     </>
   );

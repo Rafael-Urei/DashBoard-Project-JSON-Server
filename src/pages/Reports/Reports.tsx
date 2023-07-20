@@ -4,7 +4,7 @@ import { BaseLayout } from "../../shared/layouts";
 export const Reports = () => {
   return (
     <>
-      <BaseLayout titulo="Reports">
+      <BaseLayout title="Reports">
         <Box>Reports</Box>
       </BaseLayout>
     </>

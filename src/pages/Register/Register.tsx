@@ -4,7 +4,7 @@ import { BaseLayout } from "../../shared/layouts";
 export const Register = () => {
   return (
     <>
-      <BaseLayout titulo="Register">
+      <BaseLayout title="Register">
         <Box>Register</Box>
       </BaseLayout>
     </>
