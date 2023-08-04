@@ -13,3 +13,11 @@ exames concluídos e os que precisam de recoleta. A aplicação possui também u
 <p>React Hook-Form e @HookForm/Resolvers -> Para utilizar a validação dos formulários.</p>
 <p>Zod -> Também para a validação.</p>
 <p>JSON Server -> Para criação de uma Fake API onde serão guardados todos os dados.</p>
+
+<h1>Como utilizar?</h1>
+<h2>Muito simples.</h2>
+
+<p>O usuário pode clonar a aplicação em "https://github.com/Rafael-Urei/DashBoard-Project-JSON-Server</p>
+<p>Rodar o comando npm i para instalar as dependẽncias (Necessário nodeJS).</p>
+<p>Rodar o comando npm run dev.</p>
+<p>E acessar o localhost.</p>
