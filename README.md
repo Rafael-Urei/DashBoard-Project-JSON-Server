@@ -17,7 +17,7 @@ exames concluídos e os que precisam de recoleta. A aplicação possui também u
 <h1>Como utilizar?</h1>
 <h2>Muito simples.</h2>
 
-<p>O usuário pode clonar a aplicação em "https://github.com/Rafael-Urei/DashBoard-Project-JSON-Server</p>
+<p>O usuário pode clonar a aplicação em "https://github.com/Rafael-Urei/DashBoard-Project-JSON-Server"</p>
 <p>Rodar o comando npm i para instalar as dependẽncias (Necessário nodeJS).</p>
 <p>Rodar o comando npm run dev.</p>
 <p>E acessar o localhost.</p>
