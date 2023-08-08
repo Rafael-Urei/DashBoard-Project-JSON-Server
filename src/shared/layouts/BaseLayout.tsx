@@ -28,8 +28,8 @@ export const BaseLayout = ({
       <Box height="100%" display="flex" flexDirection="column" gap={1}>
         <Box>
           {match && (
-            <IconButton>
-              <MenuIcon onClick={toggleDrawer} />
+            <IconButton onClick={toggleDrawer}>
+              <MenuIcon />
             </IconButton>
           )}
         </Box>
