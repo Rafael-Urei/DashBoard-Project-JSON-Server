@@ -14,7 +14,11 @@ export const useAppDateContext = () => {
 };
 
 export const AppDateProvider = ({ children }: Props) => {
-  const [date, setDate] = useState<Dayjs | null>(dayjs("2023-07-20"));
+  const actualDate = new Date();
+  const todayDate = `${actualDate.getFullYear().toString()}-${
+    actualDate.getMonth() + 1
+  }-${actualDate.getDate().toString()}`;
+  const [date, setDate] = useState<Dayjs | null>(dayjs(todayDate));
 
   return (
     <DateContext.Provider value={{ setDate, date }}>
