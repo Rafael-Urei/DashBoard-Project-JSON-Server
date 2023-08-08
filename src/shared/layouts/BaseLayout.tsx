@@ -47,8 +47,8 @@ export const BaseLayout = ({
             {title}
           </Typography>
         </Box>
-        {children}
         {dateSelector}
+        {children}
       </Box>
     </>
   );
